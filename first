@@ -1,0 +1,17 @@
+#!/bin/bash
+dat=$(date -u)
+echo "> Script had started at $dat" 
+start=$(date +%s)
+
+#Your code of program have to be here.
+
+now=$(date +%s)
+let "time = $now - $start"
+if [[ $time > 60 ]] 
+then 
+    let "min = $time / 60"
+    echo "> Script was running during $min min"
+else
+    let "min = $time"
+    echo "> Script was running during $min sec"
+fi
